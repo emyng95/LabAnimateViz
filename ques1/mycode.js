@@ -14,9 +14,23 @@ function processData(allRows) {
 	console.log(column_year);
 	
 	/*TODO: Fetch data from the columns you need as arrays/ an array of objects */
+	var column_country = allRows.map(function(row){return row["Country"];})
+	console.log(column_country);
+
+	var column_emission = allRows.map(function(row){return row["Emission"];})
+	
 	
 	/*TODO: Preprocess the fetched data to get arrays that plotly can take as input*/
 	
+	var a=[];
+
+	for (i=0; i<column_emission.length; i=i+4){
+		a.push(column_emission[i]);
+	}
+
+	//var a = column_emission.filter(divisible_by_4)
+	
+
 	/*TODO: Use Plotly.js to display the Bar Charts*/
 	
 	
